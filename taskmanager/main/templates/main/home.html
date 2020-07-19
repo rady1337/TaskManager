@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}TaskManger - Home{% endblock title %}
+
+{% block content %}
+    <h1>Tasks</h1><br>
+    {% if tasks %}
+        {% for task in tasks %}
+            <div class="alert alert-warning">
+                <h2>{{ task.title }}</h2>
+                <p>{{ task.text }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-warning">
+            <h3 class="text-dark">You have no tasks!</h3>
+        </div>
+    {% endif %}
+{% endblock content %}

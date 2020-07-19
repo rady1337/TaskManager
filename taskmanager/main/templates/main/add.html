@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}TaskManger - Add Task{% endblock title %}
+
+{% block content %}
+<h1>Add Task</h1><br>
+
+<form method="post">
+    <div class="alert alert-info">
+    {% csrf_token %}
+    {{ form.title }}<br>
+    {{ form.text }}<br>
+    <button type="submit" class="btn btn-success">Add</button><br>
+    </div>
+    <span>{{ error }}</span>
+</form>
+{% endblock content %}
